@@ -1,0 +1,55 @@
+{% extends "base.html"%}
+
+{% block body %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header">
+                    <h3 class="text-center font-weight-light my-4">Fill The Details</h3>
+                </div>
+                   
+
+                <div class="card-body">
+                    <form action="/predict" method="post"> 
+                        <div class="form-group">
+                            <label class="small mb-1" >Location Score</label>
+                            <input class="form-control py-4" type="number" min=0 step="0.01" name="location_score" placeholder="Enter Your Location Score" required/>
+                        </div>
+                        <div class="form-group">
+                            <label class="small mb-1" >Internal Audit Score</label>
+                            <input class="form-control py-4" type="number" min=0 step="0.01" name="interal_audit_score" placeholder="Enter Your Internal Audit Score" required/>
+                        </div>
+                        <div class="form-group">
+                            <label class="small mb-1" >External Audit Score</label>
+                            <input class="form-control py-4" type="number" min=0 step="0.01" name="external_audit_score" placeholder="Enter Your External Audit Score" required/>
+                        </div>
+                        <div class="form-group">
+                            <label class="small mb-1" >Financial Score</label>
+                            <input class="form-control py-4" type="number" min=0 step="0.01" name="fin_score" placeholder="Enter Your Financial Score" required/>
+                        </div>
+                        <div class="form-group">
+                            <label class="small mb-1" >Loss Score</label>
+                            <input class="form-control py-4" type="number" min=0 step="0.01" name="loss_score" placeholder="Enter Your Loss Score" required/>
+                        </div>
+                        <div class="form-group">
+                            <label class="small mb-1" >Past Result</label>
+                            <!-- <input class="form-control py-4" type="number" min=0 step="0.01" name="past_results" placeholder="Enter Your Past Result" required/> -->
+                            <select class="custom-select" name="past_results">
+                                <option selected disabled>Choose...</option>
+                                <option value="1">Positive</option>
+                                <option value="0">Negative</option>
+                              </select>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary float-right" type="submit" >Predict</button>
+                        </div>
+            
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>  
+{% endblock%}
